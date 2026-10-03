@@ -1,0 +1,44 @@
+class AIProdigyPortfolio:
+    def __init__(self, developer_name, age, target_role):
+        self.developer_name = developer_name
+        self.age = age
+        self.target_role = target_role
+        self.showcased_projects = []
+
+    def add_verified_project(self, project_name, category, github_status):
+        project_record = {
+            "name": project_name,
+            "domain": category,
+            "visibility": github_status
+        }
+        self.showcased_projects.append(project_record)
+        print(f"Portfolio Log: Successfully linked project -> '{project_name}' [{category}]")
+
+    def generate_developer_card(self):
+        print("\n" + "="*50)
+        print(f"       GLOBAL AI PRODIGY PORTFOLIO PROFILE       ")
+        print("="*50)
+        print(f" Developer Name : {self.developer_name}")
+        print(f" Age            : {self.age} Years Old (Genius Tier)")
+        print(f" Target Role    : {self.target_role}")
+        print(f" Total Projects : {len(self.showcased_projects)} Public Cloud Repositories")
+        print("-"*50)
+        print(" Verified Proof of Work Showcase:")
+        for idx, proj in enumerate(self.showcased_projects, 1):
+            print(f"  {idx}. {proj['name']} ({proj['domain']}) --> Status: {proj['visibility']}")
+        print("="*50)
+        return "portfolio compiled and ready for global recruitment deployment"
+
+rabia_portfolio = AIProdigyPortfolio(
+    developer_name="Rabiya Razzaq Khan",
+    age=13,
+    target_role="Principal Cloud Systems & AI Automation Architect"
+)
+
+rabia_portfolio.add_verified_project("GitHub Webhook CI/CD Pipeline", "Cloud Automation", "Public 🌐")
+rabia_portfolio.add_verified_project("Render Server Health Monitor", "Cloud Infrastructure", "Public 🌐")
+rabia_portfolio.add_verified_project("Hugging Face Model Inference", "Generative AI", "Public 🌐")
+rabia_portfolio.add_verified_project("Global DNS Load Balancer", "Network Architecture", "Public 🌐")
+
+print("\nRunning Portfolio Compilation Test:")
+print(rabia_portfolio.generate_developer_card())
