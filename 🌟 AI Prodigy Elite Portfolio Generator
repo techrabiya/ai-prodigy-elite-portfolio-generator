@@ -1,44 +1,14 @@
-class AIProdigyPortfolio:
-    def __init__(self, developer_name, age, target_role):
-        self.developer_name = developer_name
-        self.age = age
-        self.target_role = target_role
-        self.showcased_projects = []
+import streamlit as st
 
-    def add_verified_project(self, project_name, category, github_status):
-        project_record = {
-            "name": project_name,
-            "domain": category,
-            "visibility": github_status
-        }
-        self.showcased_projects.append(project_record)
-        print(f"Portfolio Log: Successfully linked project -> '{project_name}' [{category}]")
+st.title("👑 Rabia's AI Prodigy Portfolio Generator")
+st.write("Dynamic profile layout showcasing cloud utilities and 13-year-old developer metrics.")
 
-    def generate_developer_card(self):
-        print("\n" + "="*50)
-        print(f"       GLOBAL AI PRODIGY PORTFOLIO PROFILE       ")
-        print("="*50)
-        print(f" Developer Name : {self.developer_name}")
-        print(f" Age            : {self.age} Years Old (Genius Tier)")
-        print(f" Target Role    : {self.target_role}")
-        print(f" Total Projects : {len(self.showcased_projects)} Public Cloud Repositories")
-        print("-"*50)
-        print(" Verified Proof of Work Showcase:")
-        for idx, proj in enumerate(self.showcased_projects, 1):
-            print(f"  {idx}. {proj['name']} ({proj['domain']}) --> Status: {proj['visibility']}")
-        print("="*50)
-        return "portfolio compiled and ready for global recruitment deployment"
+st.subheader("Developer Profile")
+st.write("**Name:** Rabia Samiulla Khan")
+st.write("**Role:** 13-Year-Old Self-Taught Python Developer & AI Architect in the Making")
+st.write("**Location:** Mumbai, India")
 
-rabia_portfolio = AIProdigyPortfolio(
-    developer_name="Rabiya Razzaq Khan",
-    age=13,
-    target_role="Principal Cloud Systems & AI Automation Architect"
-)
-
-rabia_portfolio.add_verified_project("GitHub Webhook CI/CD Pipeline", "Cloud Automation", "Public 🌐")
-rabia_portfolio.add_verified_project("Render Server Health Monitor", "Cloud Infrastructure", "Public 🌐")
-rabia_portfolio.add_verified_project("Hugging Face Model Inference", "Generative AI", "Public 🌐")
-rabia_portfolio.add_verified_project("Global DNS Load Balancer", "Network Architecture", "Public 🌐")
-
-print("\nRunning Portfolio Compilation Test:")
-print(rabia_portfolio.generate_developer_card())
+if st.button("Load Portfolio Metrics"):
+    st.metric(label="Live Deployed Apps", value="5+")
+    st.metric(label="GitHub Repositories", value="10+")
+    st.success("🌟 Portfolio status: Global Production Ready!")
